@@ -1,12 +1,21 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+
 
 //functional React component
-
-function User (){
+const name ="User Functional Component"
+export default function User (){
     return(
-        <div className="container">
-            <h2>User Functional Component</h2>
+        <div className="app">
+            <h2>{setInterval(tick, 1000)}</h2>
         </div>
     )
 }
-export default User;
+
+
+function tick(){
+    const element=(
+        <h2>it is {new Date().toLocaleTimeString()}</h2>
+    )
+    ReactDOM.render(element,document.getElementById("root"))
+}
