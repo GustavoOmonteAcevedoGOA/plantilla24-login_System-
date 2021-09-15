@@ -1,26 +1,28 @@
 import React, { Component } from 'react'
 
 export default class ClockClass extends Component {
-    constructor(props){
-        super(props);
-        this.state ={ date: new Date()}
-
-    }
     
-    componentDidMount(){
-        this.timerID = setInterval(()=> this.tick(),1000)
+    constructor(props){
+        super(props)
+        this.state ={
+            isToggleOn: true
+        }
+        this.handleClick=this.handleClick.bind(this);
     }
 
-    tick(){
-        this.setState({
-            date: new Date()
-        })
+    handleClick(e){
+        this.setState(state => ({
+            isToggleOn:!state.isToggleOn
+        }))
+         
     }
 
     render() {
         return (
             <div className="App">
-                <h2>this is {this.state.date.toLocaleTimeString()} class</h2>
+               <button onClick={this.handleClick}>
+                   {this.state.isToggleOn ? 'ON': 'OFF'}
+               </button>
             </div>
         )
     }
