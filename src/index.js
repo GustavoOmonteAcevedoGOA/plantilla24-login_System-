@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Rendering from './components/Rendering';
 
 //import the component
 import User from "./components/User";
@@ -12,6 +13,7 @@ ReactDOM.render(
         <UserClass name="MERN Stack"/>
         <UserClass name="Daily Tuition"/>
         <UserClass name="Youtube"/>
+        <Rendering/>
     </React.StrictMode>,
     document.getElementById("root")
 );
